@@ -42,7 +42,7 @@ var p5 = TypePeople(name: "Evgeniy", age: 75, growth: 167, city: "Salavat", favo
 
 arrayPeople = [p1, p2, p3]
 
-//Варианта добавления элемента в массив
+//Вариант добавления элемента в массив
 arrayPeople.append(TypePeople(name: "Valentina", age: 18, growth: 156, city: "Salavat", favoriteColor: .orange, icon: "house.fill"))
 
 arrayPeople.append(p4)
