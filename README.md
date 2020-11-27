@@ -182,11 +182,17 @@ var courseSec = arrayType(image: #imageLiteral(resourceName: "sec.png"), nameCou
 
 var courseiOS = arrayType(image: #imageLiteral(resourceName: "ios.png"), nameCourse: "iOS-разработчик с нуля", price: 70740, data: 9, type: .online)
 
-array = [courseSA, courseFront, course1C, courseSec]
+var courseDevOps = arrayType(image: #imageLiteral(resourceName: "do.png"), nameCourse: "DevOps-инженер", price: 70740, data: 11, type: .online)
+
+var courseAndroind = arrayType(image: #imageLiteral(resourceName: "android.png"), nameCourse: "Android-разработчик с нуля", price: 70740, data: 10, type: .online)
+
+var courseTest = arrayType(image: #imageLiteral(resourceName: "test.png"), nameCourse: "Тестировщик", price: 46720, data: 5, type: .online)
+
+var courseJava = arrayType(image: #imageLiteral(resourceName: "java.png"), nameCourse: "Java-разработчик с нуля", price: 77940, data: 11, type: .online)
+
+array = [courseSA, courseFront, course1C, courseSec, courseDevOps, courseAndroind, courseTest, courseJava]
 
 array.append(courseiOS)
-
-
 
 struct arrayCourse: View{
     
@@ -201,7 +207,7 @@ struct arrayCourse: View{
                     
                 VStack(alignment: .leading) {
                     Text("\(item.nameCourse)")
-                        .font(.system(size: 24, weight: .bold))
+                        .font(.system(size: 22, weight: .bold))
                         .padding(.bottom, 20)
                     HStack(alignment: .bottom){
                         Text("\(item.data) месяцев")
@@ -243,6 +249,7 @@ struct Preview: View {
 }
 
 PlaygroundPage.current.setLiveView(Preview())
+
 
 
 ```
