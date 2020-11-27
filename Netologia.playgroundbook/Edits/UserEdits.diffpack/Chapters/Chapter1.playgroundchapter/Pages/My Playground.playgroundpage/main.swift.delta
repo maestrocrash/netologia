@@ -1,0 +1,111 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
+<plist version="1.0">
+<dict>
+	<key>Diff</key>
+	<array>
+		<dict>
+			<key>ModifiedContent</key>
+			<string>import SwiftUI
+import PlaygroundSupport
+
+enum typeCourse : String {
+    case online = "онлайн"
+    case offline = "оффлайн"
+}
+
+struct arrayType: Identifiable {
+    var id = UUID()
+    var image: UIImage
+    var nameCourse: String
+    var price: Int
+    var data: Int
+    var type: typeCourse
+}
+
+var array: [arrayType] = []
+
+var courseSA : arrayType = arrayType(image: #imageLiteral(resourceName: "SA.png"), nameCourse: "Системный администратор", price: 58950, data: 12, type: .online ) 
+
+var courseFront = arrayType(image: #imageLiteral(resourceName: "front.png"), nameCourse: "Frontend-разработчик с нуля", price: 77940, data: 15, type: .online)
+
+var course1C = arrayType(image: #imageLiteral(resourceName: "1C.png"), nameCourse: "1С-разработчик", price: 56940, data: 7, type: .online)
+
+var courseSec = arrayType(image: #imageLiteral(resourceName: "sec.png"), nameCourse: "Специалист по информационной безопасности", price: 77940, data: 12, type: .online)
+
+var courseiOS = arrayType(image: #imageLiteral(resourceName: "ios.png"), nameCourse: "iOS-разработчик с нуля", price: 70740, data: 9, type: .online)
+
+array = [courseSA, courseFront, course1C, courseSec]
+
+array.append(courseiOS)
+
+
+
+struct arrayCourse: View{
+    
+    var arrayCourse: [arrayType] = array
+    
+    var body: some View {
+        
+            List(arrayCourse) {item in 
+                Image(uiImage: item.image)
+                    .resizable()
+                    .frame(width: 120, height: 120)
+                    
+                VStack(alignment: .leading) {
+                    Text("\(item.nameCourse)")
+                        .font(.system(size: 24, weight: .bold))
+                        .padding(.bottom, 20)
+                    HStack(alignment: .bottom){
+                        Text("\(item.data) месяцев")
+                            .underline()
+                        Spacer()
+                        Text("\(item.type.rawValue)")
+                            .foregroundColor(.gray)
+                        Spacer()
+                        Text("\(item.price) ₽")
+                            .font(.system(size: 20, weight: .bold))
+                    }
+                }
+            }
+    }
+}
+
+struct Preview: View {
+    
+    var body: some View {
+        
+        VStack {
+            HStack {
+                Image(uiImage: #imageLiteral(resourceName: "logo.png"))
+                    .resizable()
+                    .frame(width: 35, height: 35)
+                
+                Text("Нетология")
+                    .font(.largeTitle)
+            }
+            .padding(.top, 25)
+            
+            Text("Программирование")
+                .padding(.top, 10)
+                .font(.title)
+            
+            arrayCourse()
+        }
+    }
+}
+
+PlaygroundPage.current.setLiveView(Preview())
+</string>
+			<key>ModifiedRange</key>
+			<string>{0, 2796}</string>
+			<key>OriginalContent</key>
+			<string></string>
+			<key>OriginalRange</key>
+			<string>{0, 0}</string>
+		</dict>
+	</array>
+	<key>File</key>
+	<string>Chapters/Chapter1.playgroundchapter/Pages/My Playground.playgroundpage/main.swift</string>
+</dict>
+</plist>

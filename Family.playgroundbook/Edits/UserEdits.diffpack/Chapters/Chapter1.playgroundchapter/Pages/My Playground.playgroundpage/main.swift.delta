@@ -1,0 +1,155 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
+<plist version="1.0">
+<dict>
+	<key>Diff</key>
+	<array>
+		<dict>
+			<key>ModifiedContent</key>
+			<string>import SwiftUI
+import PlaygroundSupport
+
+//Mini exaple
+//Варианта создания массива
+var array: [String]
+var array1: Array&lt;Int&gt;
+var array2 = [1,2,3]
+
+//добавление элементов
+array2.append(5)
+
+//max example
+struct TypePeople {
+    var name: String
+    var age: Int
+    var growth: Float
+    var city: String
+    var favoriteColor: Color
+    var icon: String
+}
+
+var arrayPeople: [TypePeople]
+
+var p1 = TypePeople(name: "Michail", age: 28, growth: 178.9, city: "Saint-Petersburg",favoriteColor: .black, icon: "paperplane.fill")
+var p2 = TypePeople(name: "Albina", age: 24, growth: 156.8, city: "Saint-Petersburg", favoriteColor: .purple, icon: "paperplane.fill")
+var p3 = TypePeople(name: "Sveta", age: 49, growth: 163, city: "Salavat", favoriteColor: .red, icon: "house.fill")
+var p4 =  TypePeople(name: "Evgeniy", age: 51, growth: 165, city: "Salavat", favoriteColor: .green, icon: "house.fill")
+var p5 = TypePeople(name: "Evgeniy", age: 75, growth: 167, city: "Salavat", favoriteColor: .gray, icon: "house.fill")
+
+
+arrayPeople = [p1, p2, p3]
+
+//Варианта добавления элемента в массив
+arrayPeople.append(TypePeople(name: "Valentina", age: 18, growth: 156, city: "Salavat", favoriteColor: .orange, icon: "house.fill"))
+
+arrayPeople.append(p4)
+
+arrayPeople.insert(p5, at: 0)
+
+
+struct Preview: View {
+    struct bodyView: View {
+        
+        var itemArray: TypePeople
+        
+        var body: some View {
+            ZStack{
+                Rectangle()
+                    .fill(itemArray.favoriteColor)
+                    .frame(width: 330, height: 180)
+                    .cornerRadius(20)
+                
+                VStack {
+                    HStack {
+                        Image(systemName: itemArray.icon)
+                            .resizable()
+                            .frame(width: 20, height: 20)
+                        Spacer()
+                        
+                        Text("\(itemArray.name)")
+                            .foregroundColor(.white)
+                            .font(.title)
+                            .bold()
+                        
+                        Spacer()
+                        
+                        Text("\(itemArray.age) age")
+                            .foregroundColor(.white)
+                            .font(.system(size: 18))
+                    }
+                    
+                    VStack {
+                        HStack {
+                            Text("City:".uppercased())
+                                .underline()
+                                .font(.system(size: 17, weight: .semibold))
+                                
+                            Text("\(itemArray.city)")
+                                .font(.system(size: 24, weight: .bold))
+                                
+                            Spacer()
+                        }
+                        
+                        Spacer()
+                        
+                        HStack {
+                            Text("Growth:".uppercased())
+                                .underline()
+                                .font(.system(size: 17, weight: .semibold))
+                            
+                            Text("\(String(format: "%.1f", itemArray.growth))")
+                                .font(.system(size: 24, weight: .bold))
+                            
+                            Spacer()
+                        }
+                    }
+                    .padding(.top,15)
+                    
+                }
+                .padding(.leading, 20)
+                .padding(.trailing, 20)
+                .frame(width: 310, height: 130)
+            }
+        }
+    }
+    
+    var body: some View { 
+        VStack {
+            Text("Family")
+                .font(.title)
+                .bold()
+                .padding(10)
+        
+            ScrollView {
+                VStack {
+                    bodyView(itemArray: arrayPeople[0])
+                    bodyView(itemArray: arrayPeople[1])
+                    bodyView(itemArray: arrayPeople[2])
+                    bodyView(itemArray: arrayPeople[3])
+                    bodyView(itemArray: arrayPeople[4])
+                    bodyView(itemArray: arrayPeople[5])
+                }
+                
+            }
+        }
+    }
+}
+
+PlaygroundPage.current.setLiveView(Preview())
+
+for i in arrayPeople {
+    print(i.name)
+}
+</string>
+			<key>ModifiedRange</key>
+			<string>{1, 4372}</string>
+			<key>OriginalContent</key>
+			<string></string>
+			<key>OriginalRange</key>
+			<string>{1, 0}</string>
+		</dict>
+	</array>
+	<key>File</key>
+	<string>Chapters/Chapter1.playgroundchapter/Pages/My Playground.playgroundpage/main.swift</string>
+</dict>
+</plist>
